@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Child Report{% endblock %}
+
+{% block content %}
+<section>
+    <h2>Emotion Learning Report for {{ child_name }}</h2>
+
+    {% if report.total_attempts == 0 %}
+        <p>No attempts recorded yet for this child.</p>
+    {% else %}
+        <ul>
+            <li>Total attempts: {{ report.total_attempts }}</li>
+            <li>Correct attempts: {{ report.correct_attempts }}</li>
+            <li>Accuracy: {{ report.accuracy }}%</li>
+        </ul>
+
+        <h3>Emotion Confusion</h3>
+        {% if report.emotion_confusion %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Detected → Answered</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key, count in report.emotion_confusion.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ count }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No confusion data yet.</p>
+        {% endif %}
+
+        <h3>Email Report</h3>
+        <form method="POST" action="{{ url_for('send_report') }}">
+            <input type="hidden" name="child_name" value="{{ child_name }}">
+            <label for="parent_email">Parent email:</label>
+            <input type="email" id="parent_email" name="parent_email" required placeholder="parent@example.com">
+            <button type="submit">Send Report</button>
+        </form>
+    {% endif %}
+</section>
+{% endblock %}

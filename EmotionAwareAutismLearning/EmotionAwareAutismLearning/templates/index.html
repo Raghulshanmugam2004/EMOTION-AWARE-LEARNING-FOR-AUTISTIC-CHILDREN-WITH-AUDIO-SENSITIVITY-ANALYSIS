@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Parent Dashboard{% endblock %}
+
+{% block content %}
+<section>
+    <h2>Parent Dashboard</h2>
+    <p>
+        Welcome to the Emotion-Aware Learning platform. From here you can:
+    </p>
+    <ul>
+        <li>Open the <strong>Child Learning</strong> page to let your child practice recognizing emotions.</li>
+        <li>Upload audio samples to check if they cause irritation.</li>
+        <li>View and email learning reports.</li>
+    </ul>
+
+    <h3>Live Camera Emotion Detection (Demo)</h3>
+    <p>This is a simple webcam stream. Integrate real-time emotion labels by updating <code>camera_service.py</code>.</p>
+    <img src="{{ url_for('video_feed') }}" alt="Live camera stream" class="camera-stream">
+</section>
+{% endblock %}

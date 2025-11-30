@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Audio Irritation Test{% endblock %}
+
+{% block content %}
+<section>
+    <h2>Autism Sound Irritation and Emotion Recognition Module</h2>
+    <p>
+        Upload a sound that you want to test. After playing the sound to the child,
+        select the emotion you observed on the child's face.
+    </p>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label for="child_name">Child name:</label>
+        <input type="text" id="child_name" name="child_name" placeholder="Enter child name" required>
+
+        <label for="audio_file">Audio file (e.g. .wav, .mp3):</label>
+        <input type="file" id="audio_file" name="audio_file" accept=".wav,.mp3,.ogg" required>
+
+        <label for="observed_emotion">Observed emotion:</label>
+        <select id="observed_emotion" name="observed_emotion" required>
+            <option value="">-- Select Emotion --</option>
+            <option value="comfortable">Comfortable</option>
+            <option value="neutral">Neutral</option>
+            <option value="irritated">Irritated</option>
+            <option value="anxious">Anxious</option>
+        </select>
+
+        <button type="submit">Upload & Save</button>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Child Learning{% endblock %}
+
+{% block content %}
+<section>
+    <h2>Emotion Learning Module</h2>
+    <p>Dear child, look at the emoji and choose which emotion it represents.</p>
+
+    <div class="emoji-card">
+        {% if emotion == "happy" %}
+            <span class="emoji">😊</span>
+        {% elif emotion == "sad" %}
+            <span class="emoji">😢</span>
+        {% elif emotion == "angry" %}
+            <span class="emoji">😡</span>
+        {% elif emotion == "surprised" %}
+            <span class="emoji">😲</span>
+        {% else %}
+            <span class="emoji">😐</span>
+        {% endif %}
+        <p class="emotion-label">(System emotion: {{ emotion }})</p>
+    </div>
+
+    <form method="POST">
+        <input type="hidden" name="detected_emotion" value="{{ emotion }}">
+        <label for="child_name">Child name:</label>
+        <input type="text" id="child_name" name="child_name" placeholder="Enter child name" required>
+
+        <label for="child_answer">What emotion is this?</label>
+        <select id="child_answer" name="child_answer" required>
+            <option value="">-- Select Emotion --</option>
+            <option value="happy">Happy</option>
+            <option value="sad">Sad</option>
+            <option value="angry">Angry</option>
+            <option value="surprised">Surprised</option>
+            <option value="neutral">Neutral</option>
+        </select>
+
+        <button type="submit">Submit Answer</button>
+    </form>
+</section>
+{% endblock %}

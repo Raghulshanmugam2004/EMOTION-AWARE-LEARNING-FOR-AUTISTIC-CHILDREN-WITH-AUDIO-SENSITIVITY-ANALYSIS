@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f7fb;
+}
+
+header {
+    background: #3949ab;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+nav a {
+    color: white;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 2rem;
+}
+
+section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.camera-stream {
+    display: block;
+    margin-top: 1rem;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 2px solid #eee;
+}
+
+.emoji-card {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.emoji {
+    font-size: 4rem;
+    display: block;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: none;
+    background: #3949ab;
+    color: white;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+button:hover {
+    background: #303f9f;
+}
+
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.flash {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.25rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.flash.success {
+    background: #c8e6c9;
+    color: #256029;
+}
+
+.flash.danger {
+    background: #ffcdd2;
+    color: #b71c1c;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+th {
+    background: #f0f0f0;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: #777;
+}
